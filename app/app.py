@@ -83,7 +83,7 @@ with ui.layout_columns():
                 y="bill_depth_mm",
                 hue="species",
             )
-
+    # card for Penguine data
     with ui.card(full_screen=True):
         ui.card_header("Penguin data")
 
