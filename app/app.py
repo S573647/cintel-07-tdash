@@ -8,10 +8,10 @@ import palmerpenguins
 df = palmerpenguins.load_penguins()
 
 # create  penguins dashboard
-ui.page_opts(title="Penguins dashboard", fillable=True)
+ui.page_opts(title="Kamalini's Module 7 Penguins dashboard", fillable=True)
 
 # create a sidebar with title Filter controls
-with ui.sidebar(title="Filter controls"):
+with ui.sidebar(title="Dashboard Filter options"):
     # create a slider for mass between 2000 and 6000 with default 6000 selected
     ui.input_slider("mass", "Mass", 2000, 6000, 6000)
     # create multiple check boxes and select them
@@ -25,7 +25,7 @@ with ui.sidebar(title="Filter controls"):
     # draw a horizontal line
     ui.hr()
     # create subheader named Links
-    ui.h6("Links")
+    ui.h6("Resource Links")
     # create hyperlink for different things
     ui.a(
         "GitHub Source",
@@ -69,14 +69,14 @@ with ui.layout_column_wrap(fill=False):
 
         @render.text
         def bill_length():
-            return f"{filtered_df()['bill_length_mm'].mean():.1f} mm"
+            return f"{filtered_df()['bill_length(mm)'].mean():.1f} mm"
     # third column
     with ui.value_box(showcase=icon_svg("ruler-vertical")):
         "Average bill depth"
 
         @render.text
         def bill_depth():
-            return f"{filtered_df()['bill_depth_mm'].mean():.1f} mm"
+            return f"{filtered_df()['bill_depth(mm)'].mean():.1f} mm"
 
 # create a row with multiple columns
 with ui.layout_columns():
